@@ -31,14 +31,18 @@
       </div>
 
       <div id="state-ok" hidden>
-        <div class="breadcrumb">
-          <a href="./index.html">Home</a> / <span id="group-crumb-name">Group</span>
-        </div>
-        <p style="margin: 0.75rem 0 0">
-          <button type="button" class="btn btn-ghost" id="btn-logout">Logout</button>
-        </p>
+        <div class="breadcrumb" style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <a href="./index.html">Home</a> /
+            <span id="group-crumb-name">Group</span>
+          </div>
+
+          <button type="button" class="btn btn-ghost" id="btn-logout">
+            Logout
+          </button>
+      </div>
         <h1 id="group-title">Group</h1>
-        <p class="lead">Leaderboard, nights, and players will load from Supabase here.</p>
+        <p class="lead">Group overview, with leaderboard, nights & players.</p>
 
         <h2>Leaderboard</h2>
         <div class="table-wrap">
@@ -52,7 +56,7 @@
             </thead>
             <tbody id="leaderboard-body">
               <tr>
-                <td colspan="3" class="placeholder">No data yet — wire up Supabase queries.</td>
+                <td colspan="3" class="placeholder">No data yet.</td>
               </tr>
             </tbody>
           </table>

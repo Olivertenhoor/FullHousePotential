@@ -205,8 +205,7 @@ if (!nightId) {
               p_results: payload,
             });
             if (error) throw error;
-            await refresh();
-            alert("Saved.");
+            navigate("./group.html", { id: effectiveGroupId });
           } catch (err) {
             alert(`Could not save: ${err?.message ?? err}`);
           }
