@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home Poker Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-logo" href="./index.html">FullHouse<span>Potential</span></a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="./index.html">Home</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1>Home games</h1>
+      <p class="lead">
+        Track nights, buy-ins, and cash-outs for your home poker group. Connect Supabase
+        to unlock live data.
+      </p>
+
+      <!-- <div class="banner-config">
+        <strong>Setup:</strong> copy
+        <code>js/config.example.js</code> to <code>js/config.js</code> and add your
+        Supabase URL and anon key. Then load the Supabase-backed features (coming next).
+      </div> -->
+
+      <div class="grid-two">
+        <section class="card" aria-labelledby="new-group-heading">
+          <h3 id="new-group-heading">New home game</h3>
+          <form id="form-new-group" action="#" method="get">
+            <div class="field">
+              <label for="group-name">Group name</label>
+              <input
+                id="group-name"
+                name="name"
+                type="text"
+                autocomplete="organization"
+                placeholder="Friday kitchen table"
+              />
+            </div>
+            <div class="field">
+              <label for="group-code">Group code</label>
+              <input
+                id="group-code"
+                name="code"
+                type="text"
+                autocomplete="off"
+                placeholder="fridaypoker"
+                pattern="[a-z0-9]{3,32}"
+                title="3–32 characters: lowercase letters and numbers only"
+              />
+              <p class="field-hint">
+                Used to log in to the group. Lowercase letters and numbers only.
+              </p>
+            </div>
+            <div class="field">
+              <label for="group-password">Group password</label>
+              <input
+                id="group-password"
+                name="password"
+                type="password"
+                autocomplete="new-password"
+                placeholder="Shared with your crew"
+              />
+              <p class="field-hint">Used to authorize edits (stored hashed in the database).</p>
+            </div>
+            <button type="submit" class="btn btn-primary">Create group</button>
+          </form>
+        </section>
+
+        <section class="card" aria-labelledby="open-group-heading">
+          <h3 id="open-group-heading">Open existing</h3>
+          <form id="form-open-group" action="./group.html" method="get">
+            <div class="field">
+              <label for="group-id">Group code</label>
+              <input
+                id="group-id"
+                name="code"
+                type="text"
+                required
+                placeholder="e.g. fridaypoker"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Open group</button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">Home Poker Tracker — static layout scaffold</footer>
+
+    <script src="./js/config.js"></script>
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>

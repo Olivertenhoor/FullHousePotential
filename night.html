@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Night — Home Poker Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-logo" href="./index.html">Home<span>Poker</span></a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="./index.html">Home</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div id="state-missing">
+        <div class="breadcrumb"><a href="./index.html">Home</a></div>
+        <h1>Night</h1>
+        <p class="lead">Add <code>?id=…</code> (night id) to the URL.</p>
+        <a class="btn btn-primary" href="./index.html">Back to home</a>
+      </div>
+
+      <div id="state-ok" hidden>
+        <div class="breadcrumb">
+          <a href="./index.html">Home</a> /
+          <a id="link-parent-group" href="./group.html">Group</a> /
+          <span id="night-crumb-label">Night</span>
+        </div>
+        <h1 id="night-title">Night</h1>
+        <p class="lead" id="night-meta">Date and notes will appear here.</p>
+
+        <section class="card">
+          <h3 style="margin-top: 0">Results</h3>
+          <p class="field-hint" style="margin-bottom: 1rem">
+            Buy-in and cash-out per player (cents or dollars TBD in logic). Group password
+            required on save.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Player</th>
+                  <th class="num">Buy-in</th>
+                  <th class="num">Cash-out</th>
+                  <th class="num">Net</th>
+                </tr>
+              </thead>
+              <tbody id="results-body">
+                <tr>
+                  <td colspan="4" class="placeholder">No rows yet — Supabase integration pending.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin: 1rem 0 0">
+            <button type="button" class="btn btn-primary" id="btn-save-results">Save results</button>
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">Home Poker Tracker — static layout scaffold</footer>
+
+    <script src="./js/config.js"></script>
+    <script type="module" src="./js/night-page.js"></script>
+  </body>
+</html>

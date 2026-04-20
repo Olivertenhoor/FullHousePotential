@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Group — Home Poker Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-logo" href="./index.html">Home<span>Poker</span></a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="./index.html">Home</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div id="state-missing">
+        <div class="breadcrumb"><a href="./index.html">Home</a></div>
+        <h1>Group</h1>
+        <p class="lead">Add <code>?id=…</code> to the URL or open a group from the home page.</p>
+        <a class="btn btn-primary" href="./index.html">Back to home</a>
+      </div>
+
+      <div id="state-ok" hidden>
+        <div class="breadcrumb">
+          <a href="./index.html">Home</a> / <span id="group-crumb-name">Group</span>
+        </div>
+        <p style="margin: 0.75rem 0 0">
+          <button type="button" class="btn btn-ghost" id="btn-logout">Logout</button>
+        </p>
+        <h1 id="group-title">Group</h1>
+        <p class="lead">Leaderboard, nights, and players will load from Supabase here.</p>
+
+        <h2>Leaderboard</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th class="num">Nights</th>
+                <th class="num">Net</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+              <tr>
+                <td colspan="3" class="placeholder">No data yet — wire up Supabase queries.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Nights</h2>
+        <div class="card">
+          <p class="placeholder" id="nights-placeholder">No nights recorded yet.</p>
+          <ul id="nights-list" class="list" hidden></ul>
+          <p style="margin: 0">
+            <button type="button" class="btn btn-primary" id="btn-add-night">Add night</button>
+          </p>
+        </div>
+
+        <h2>Players</h2>
+        <div class="card">
+          <p class="placeholder" id="players-placeholder">No players yet.</p>
+          <ul id="players-list" class="list" hidden></ul>
+          <p style="margin: 0">
+            <button type="button" class="btn btn-ghost" id="btn-add-player">Add player</button>
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">Home Poker Tracker — static layout scaffold</footer>
+
+    <script src="./js/config.js"></script>
+    <script type="module" src="./js/group-page.js"></script>
+  </body>
+</html>
